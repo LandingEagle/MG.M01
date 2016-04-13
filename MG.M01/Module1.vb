@@ -1,4 +1,8 @@
-﻿Imports System.Data.SQLite
+﻿Imports System
+Imports System.IO
+Imports System.Collections
+
+Imports System.Data.SQLite
 
 Module Module1
 
@@ -16,6 +20,12 @@ Module Module1
    Public MGcnn As New SQLite.SQLiteConnection(ds)
 
    Sub Main()
+
+      Dim Dummy As VariantType
+      Dummy = GetTags()
+
+      Exit Sub
+
       MGcnn.Open()
       Artist = GetArtist(1)
    End Sub
@@ -48,6 +58,37 @@ Module Module1
 
       MGcmd.Dispose()
       MGcnn.Close()
+
+   End Function
+
+   Function GetTags() As Boolean
+
+      Dim DirLoc As String = "G:\A&V\Musik\flac\Sky\1981) Sky 3 (Re-Issue 2015)\1981) Sky 3 (Re-Issue 2015) (CD01)"
+      Dim FilLst As String() = Directory.GetFiles(DirLoc)
+      Dim FilNam As String
+
+      For Each FilNam In FilLst
+
+         Dim InpFil = IO.File.Open(FilNam, FileMode.Open)
+         Dim BytCnt = InpFil.Length
+         Dim InpByt = New Byte(BytCnt - 1) {}
+         Dim InpChr As String
+         Dim InpOff As Long = 0
+
+         Dim Idx As Long = 0
+
+         While InpFil.Read(InpByt, 0, BytCnt) > 0
+
+            InpChr = InpByt.ToString()
+            If InpChr = "A" Then
+               Console.WriteLine("Gerade ein A gelesen")
+            End If
+
+         End While
+
+      Next FilNam
+
+      Return True
 
    End Function
 
