@@ -1,0 +1,6 @@
+Here are a set of classes for extracting most of the common information, including pictures, from both MP3 ID3 tags and WMA tags. There is also a class to read MP3 file properties and there is a demo program show how to use the classes. These classes are read-only: you can't change any of the properties.
+
+The WMA class was derived from a C# console application included in the Windows Media Format SDK. I translated the code to VB and created a class with properties from the example. I added the ability to extract the picture as an image you can display in a picture box.
+
+The ID3 tag reader was written from scratch. It supports ID3V1.0/1.1 or ID3V2.3/2.4. ID3V2.2 is NOT supported--the tags are totally different from 2.3 and 2.4 and this version seems unsupported on ID3.org. The reason I wrote this from scratch was that none of the simpler examples I found worked with modern tags. ID32.3 and ID3V2.4 allow for ANSI, UTF-8, UTF-16BE or UTF-16LE encoding within any frame. Some of the tags on my music files have ANSI encoding for some properties and UTF-16LE for others! My class properly reads the text encoding bytes and decodes each frame properly. The frame size is also calculated for each frame because, for some encoding methods, there is no trailing zero for strings!
+

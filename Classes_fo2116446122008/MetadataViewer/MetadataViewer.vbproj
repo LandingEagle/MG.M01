@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30428</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{58AE36B3-239E-4575-B56E-4F884C769A81}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>MetadataViewer.My.MyApplication</StartupObject>
+    <RootNamespace>MetadataViewer</RootNamespace>
+    <AssemblyName>MetadataViewer</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>On</OptionStrict>
+    <OptionInfer>Off</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>MetadataViewer.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <CodeAnalysisRules>-Microsoft.Globalization#CA1301;-Microsoft.Globalization#CA1302;-Microsoft.Globalization#CA1308;-Microsoft.Globalization#CA1306;-Microsoft.Globalization#CA1304;-Microsoft.Globalization#CA1305;-Microsoft.Globalization#CA2101;-Microsoft.Globalization#CA1300;-Microsoft.Globalization#CA1307;-Microsoft.Globalization#CA1309</CodeAnalysisRules>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>MetadataViewer.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutDialog.Designer.vb">
+      <DependentUpon>AboutDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AboutDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListViewItemComparer.vb" />
+    <Compile Include="MainForm.Designer.vb">
+      <DependentUpon>MainForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="StringMethods.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AboutDialog.resx">
+      <DependentUpon>AboutDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Resources\EULA.pdf" />
+    <None Include="Resources\EULA.rtf" />
+    <None Include="Resources\segoepr.ttf" />
+    <None Include="Resources\segoeprb.ttf" />
+    <None Include="Resources\segoesc.ttf" />
+    <None Include="Resources\segoescb.ttf" />
+    <None Include="Resources\segoeui.ttf" />
+    <None Include="Resources\segoeuib.ttf" />
+    <None Include="Resources\segoeuii.ttf" />
+    <None Include="Resources\segoeuiz.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Exit_16x16.png" />
+    <Content Include="Resources\GrayGradient.png" />
+    <Content Include="Resources\MedaPlayerFile.ico" />
+    <Content Include="Resources\MedaPlayerFile_16x16.png" />
+    <Content Include="Resources\MedaPlayerFile_48x48.png" />
+    <Content Include="Resources\MP3File.ico" />
+    <Content Include="Resources\MP3File_16x16.png" />
+    <Content Include="Resources\MP3File_32x32.png" />
+    <Content Include="Resources\MP3File_48x48.png" />
+    <Content Include="Resources\Note.ico" />
+    <Content Include="Resources\Note_16x16.png" />
+    <Content Include="Resources\Note_48x48.png" />
+    <Content Include="Resources\Unknown_32x32.png" />
+    <Content Include="Resources\WMAFile.ico" />
+    <Content Include="Resources\WMAFile_16x16.png" />
+    <Content Include="Resources\WMAFile_32x32.png" />
+    <Content Include="Resources\WMAFile_48x48.ico" />
+    <Content Include="Resources\WMAFile_48x48.png" />
+    <Content Include="Resources\WMVFile_16x16.png" />
+    <Content Include="Resources\WMVFile_32x32.png" />
+    <Content Include="Resources\WMVFile_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MP3FileInfoLibrary\MP3FileInfoLibrary.vbproj">
+      <Project>{009080A3-8D71-4520-A737-7DE7C655FDFF}</Project>
+      <Name>MP3InfoLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TagReaderLibrary\TagReaderLibrary.vbproj">
+      <Project>{E9A9BCD4-5478-40A2-85DA-4FBA5354B836}</Project>
+      <Name>TagReaderLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WindowsMediaMetadata\WindowsMediaMetadata.vbproj">
+      <Project>{24DDAC31-5BEE-4E3C-9DF9-36C550A517EF}</Project>
+      <Name>WindowsMediaMetadata</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
